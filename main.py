@@ -11,6 +11,8 @@ def city_id(id_str):
     return req
 
 
+# TODO add form when user can input their city
+
 req_lv = city_id('702550')
 req_new = city_id('5128581')
 req_ry = city_id('108410')
