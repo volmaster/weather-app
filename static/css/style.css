@@ -116,7 +116,7 @@ body {
 h1 {
     font-size: 3em;
     text-align: center;
-    color: #fff;
+    color: #ffd700;
     font-weight: 100;
 }
 
@@ -188,7 +188,7 @@ h1 {
 }
 
 .copyright p a {
-    color: #D26C22;
+    color: #ffd700;
     transition: 0.5s all;
     /*-- agileits --*/
     -webkit-transition: 0.5s all;
@@ -251,6 +251,10 @@ h1 {
     .copyright {
         margin: 7em 0 1em;
 
+    }
+
+    .weather-left {
+        min-height: 300px;
     }
 }
 
