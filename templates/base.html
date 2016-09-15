@@ -1,0 +1,7 @@
+{% macro weather(place) %}
+    {% if  place  == 'clear sky' %}
+        <canvas id="clear-day" width="60" height="60"></canvas>
+    {% elif place  == 'few clouds' %}
+        <canvas id="partly-cloudy-day" width="60" height="60"></canvas>
+    {% endif %}
+{% endmacro %}

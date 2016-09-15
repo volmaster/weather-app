@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modern Weather Widget Flat Responsive Widget Template :: w3layouts</title>
+    <!--mobile-apps-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords"
+          content="Modern Weather Widget template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <!--//mobile-apps-->
+    <!--Custom Theme files-->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" media="all"/>
+    <!--//Custom Theme files -->
+    <!-- web-font -->
+    <link href='//fonts.googleapis.com/css?family=Khand:400,300,500,600,700' rel='stylesheet' type='text/css'>
+    <!--//web-font-->
+    <!--skycon-icons-->
+    <script src="{{ url_for('static', filename='js/skycons.js') }}"></script>
+    <!--//skycon-icons-->
+</head>
+<body>
+<!-- main -->
+<div class="main">
+    <h1>Weather Widget</h1>
+    <div class="main-info">
+        <div class="weather-left">
+            <div class="weather-text">
+                <h3>{{ info_lv.city }}</h3>
+                {% if info_lv.weather == 'clear sky' %}
+                    <canvas id="clear-day" width="60" height="60"></canvas>
+                {% elif info_lv.wether == 'few clouds' %}
+                    <canvas id="partly-cloudy-day" width="60" height="60"></canvas>
+                {% endif %}
+                <h4>{{ info_lv.temp }}°C</h4>
+            </div>
+        </div>
+        <div class="weather-left weather-right">
+            <div class="weather-text">
+                <h3>{{ info_new.city }}</h3>
+                <canvas id="snow" width="60" height="60"></canvas>
+                <h4>{{ info_new.temp }}°C</h4>
+            </div>
+        </div>
+        <div class="weather-left weather-grid3">
+            <div class="weather-text">
+                <h3>{{ info_ry.city }}</h3>
+                <canvas id="partly-cloudy-day" width="60" height="60"></canvas>
+                <h4>{{ info_ry.temp }}°C</h4>
+            </div>
+        </div>
+        <div class="weather-left weather-right weather-grid3">
+            <div class="weather-text">
+                <h3>{{ info_to.city }}</h3>
+                <canvas id="rain" width="60" height="60"></canvas>
+                <h4>{{ info_to.temp }}°C</h4>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <script>
+        var icons = new Skycons({"color": "#fff"}),
+                list = [
+                    "clear-night", "clear-day", "partly-cloudy-day",
+                    "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+                    "fog"
+                ],
+                i;
+
+        for (i = list.length; i--;)
+            icons.set(list[i], list[i]);
+
+        icons.play();
+    </script>
+    <!-- copyright -->
+    <div class="copyright">
+        <p>© 2016 Simply Weather Widget. Weather forecast from <a href="http://openweathermap.org/">
+            openweathermap.org</a></p>
+    </div>
+    <!-- //copyright -->
+</div>
+<!-- //main -->
+</body>
+</html>
