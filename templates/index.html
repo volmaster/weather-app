@@ -28,38 +28,37 @@
 </head>
 <body>
 <!-- main -->
+<!-- macros -->
+{% import 'macros.html' as macros %}
+<!-- //macros -->
 <div class="main">
     <h1>Weather Widget</h1>
     <div class="main-info">
         <div class="weather-left">
             <div class="weather-text">
                 <h3>{{ info_lv.city }}</h3>
-                {% if info_lv.weather == 'clear sky' %}
-                    <canvas id="clear-day" width="60" height="60"></canvas>
-                {% elif info_lv.wether == 'few clouds' %}
-                    <canvas id="partly-cloudy-day" width="60" height="60"></canvas>
-                {% endif %}
+                {{ macros.icons(info_lv.weather) }}
                 <h4>{{ info_lv.temp }}°C</h4>
             </div>
         </div>
         <div class="weather-left weather-right">
             <div class="weather-text">
                 <h3>{{ info_new.city }}</h3>
-                <canvas id="snow" width="60" height="60"></canvas>
+                {{ macros.icons(info_new.weather) }}
                 <h4>{{ info_new.temp }}°C</h4>
             </div>
         </div>
         <div class="weather-left weather-grid3">
             <div class="weather-text">
                 <h3>{{ info_ry.city }}</h3>
-                <canvas id="partly-cloudy-day" width="60" height="60"></canvas>
+                {{ macros.icons(info_ry.weather) }}
                 <h4>{{ info_ry.temp }}°C</h4>
             </div>
         </div>
         <div class="weather-left weather-right weather-grid3">
             <div class="weather-text">
                 <h3>{{ info_to.city }}</h3>
-                <canvas id="rain" width="60" height="60"></canvas>
+                {{ macros.icons(info_to.weather) }}
                 <h4>{{ info_to.temp }}°C</h4>
             </div>
         </div>
@@ -73,10 +72,13 @@
                     "fog"
                 ],
                 i;
-
-        for (i = list.length; i--;)
-            icons.set(list[i], list[i]);
-
+        for (i = list.length; i--;) {
+            var weatherType = list[i],
+                    elements = document.getElementsByClassName(weatherType);
+            for (e = elements.length; e--;) {
+                icons.set(elements[e], weatherType);
+            }
+        }
         icons.play();
     </script>
     <!-- copyright -->
