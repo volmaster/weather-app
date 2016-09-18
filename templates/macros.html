@@ -1,17 +1,24 @@
 {% macro icons(args) -%}
-    {% if  args   == 'clear sky' %}
+    {% if 'clear sky' in args %}
         <canvas class="clear-day" width="60" height="60"></canvas>
 
-    {% elif args == 'few clouds' %}
+    {% elif 'few clouds' in args %}
         <canvas class="partly-cloudy-day" width="60" height="60"></canvas>
 
-    {% elif args == 'scattered clouds' or 'broken clouds' %}
+    {% elif 'clouds' in args %}
         <canvas class="cloudy" width="60" height="60"></canvas>
 
-    {% elif args == 'shower rain' or 'rain' or 'thunderstorm' %}
+    {% elif 'rain' in args %}
         <canvas class="rain" width="60" height="60"></canvas>
 
-    {% elif args == 'snow' %}
+    {% elif 'snow' in args %}
         <canvas class="snow" width="60" height="60"></canvas>
+
+    {% elif 'mist' in args %}
+        <canvas class="fog" width="60" height="60"></canvas>
+
+    {% else %}
+        <canvas class="partly-cloudy-day" width="60" height="60"></canvas>
     {% endif %}
 {%- endmacro %}
+
