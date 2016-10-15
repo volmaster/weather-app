@@ -36,30 +36,30 @@
     <div class="main-info">
         <div class="weather-left">
             <div class="weather-text">
-                <h3>{{ info_lv.city }}</h3>
-                {{ macros.icons(info_lv.weather) }}
-                <h4>{{ info_lv.temp }}°C</h4>
+                <h3>{{ info[0].city }}</h3>
+                {{ macros.icons(info[0].weather) }}
+                <h4>{{ info[0].temp }}°C</h4>
             </div>
         </div>
         <div class="weather-left weather-right">
             <div class="weather-text">
-                <h3>{{ info_new.city }}</h3>
-                {{ macros.icons(info_new.weather) }}
-                <h4>{{ info_new.temp }}°C</h4>
+                <h3>{{ info[1].city }}</h3>
+                {{ macros.icons(info[1].weather) }}
+                <h4>{{ info[1].temp }}°C</h4>
             </div>
         </div>
         <div class="weather-left weather-grid3">
             <div class="weather-text">
-                <h3>{{ info_ry.city }}</h3>
-                {{ macros.icons(info_ry.weather) }}
-                <h4>{{ info_ry.temp }}°C</h4>
+                <h3>{{ info[2].city }}</h3>
+                {{ macros.icons(info[2].weather) }}
+                <h4>{{ info[2].temp }}°C</h4>
             </div>
         </div>
         <div class="weather-left weather-right weather-grid3">
             <div class="weather-text">
-                <h3>{{ info_to.city }}</h3>
-                {{ macros.icons(info_to.weather) }}
-                <h4>{{ info_to.temp }}°C</h4>
+                <h3>{{ info[3].city }}</h3>
+                {{ macros.icons(info[3].weather) }}
+                <h4>{{ info[3].temp }}°C</h4>
             </div>
         </div>
         <div class="clear"></div>
